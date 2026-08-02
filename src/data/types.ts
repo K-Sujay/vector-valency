@@ -1,0 +1,30 @@
+export type FormulaTier = "important" | "basic" | "advanced";
+
+export interface Formula {
+  name: string;
+  formula: string;
+  explanation: string;
+  tier: FormulaTier;
+}
+
+export interface Chapter {
+  slug: string;
+  number: number;
+  title: string;
+  formulas: Formula[];
+  /** Future-ready slots: definitions, notes, solutions, pyqs, pdfs */
+}
+
+export interface Subject {
+  slug: "physics" | "chemistry" | "mathematics";
+  name: string;
+  icon: string;
+  blurb: string;
+  chapters: Chapter[];
+}
+
+export const TIERS: { tier: FormulaTier; label: string; icon: string }[] = [
+  { tier: "important", label: "Important Formula", icon: "⭐" },
+  { tier: "basic", label: "Basic Formulas", icon: "📖" },
+  { tier: "advanced", label: "Advanced Formulas", icon: "⚡" },
+];
