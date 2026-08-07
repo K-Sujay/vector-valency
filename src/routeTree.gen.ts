@@ -14,6 +14,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ChemistryIndexRouteImport } from './routes/chemistry.index'
 import { Route as ChemistryChapterRouteImport } from './routes/chemistry.$chapter'
+import { Route as ComputerScienceIndexRouteImport } from './routes/computer-science.index'
+import { Route as ComputerScienceChapterRouteImport } from './routes/computer-science.$chapter'
 import { Route as MathematicsIndexRouteImport } from './routes/mathematics.index'
 import { Route as MathematicsChapterRouteImport } from './routes/mathematics.$chapter'
 import { Route as PhysicsIndexRouteImport } from './routes/physics.index'
@@ -44,6 +46,16 @@ const ChemistryChapterRoute = ChemistryChapterRouteImport.update({
   path: '/chemistry/$chapter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComputerScienceIndexRoute = ComputerScienceIndexRouteImport.update({
+  id: '/computer-science/',
+  path: '/computer-science/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComputerScienceChapterRoute = ComputerScienceChapterRouteImport.update({
+  id: '/computer-science/$chapter',
+  path: '/computer-science/$chapter',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MathematicsIndexRoute = MathematicsIndexRouteImport.update({
   id: '/mathematics/',
   path: '/mathematics/',
@@ -70,9 +82,11 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/chemistry/$chapter': typeof ChemistryChapterRoute
+  '/computer-science/$chapter': typeof ComputerScienceChapterRoute
   '/mathematics/$chapter': typeof MathematicsChapterRoute
   '/physics/$chapter': typeof PhysicsChapterRoute
   '/chemistry/': typeof ChemistryIndexRoute
+  '/computer-science/': typeof ComputerScienceIndexRoute
   '/mathematics/': typeof MathematicsIndexRoute
   '/physics/': typeof PhysicsIndexRoute
 }
@@ -81,9 +95,11 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/chemistry/$chapter': typeof ChemistryChapterRoute
+  '/computer-science/$chapter': typeof ComputerScienceChapterRoute
   '/mathematics/$chapter': typeof MathematicsChapterRoute
   '/physics/$chapter': typeof PhysicsChapterRoute
   '/chemistry': typeof ChemistryIndexRoute
+  '/computer-science': typeof ComputerScienceIndexRoute
   '/mathematics': typeof MathematicsIndexRoute
   '/physics': typeof PhysicsIndexRoute
 }
@@ -93,9 +109,11 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/chemistry/$chapter': typeof ChemistryChapterRoute
+  '/computer-science/$chapter': typeof ComputerScienceChapterRoute
   '/mathematics/$chapter': typeof MathematicsChapterRoute
   '/physics/$chapter': typeof PhysicsChapterRoute
   '/chemistry/': typeof ChemistryIndexRoute
+  '/computer-science/': typeof ComputerScienceIndexRoute
   '/mathematics/': typeof MathematicsIndexRoute
   '/physics/': typeof PhysicsIndexRoute
 }
@@ -106,9 +124,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/chemistry/$chapter'
+    | '/computer-science/$chapter'
     | '/mathematics/$chapter'
     | '/physics/$chapter'
     | '/chemistry/'
+    | '/computer-science/'
     | '/mathematics/'
     | '/physics/'
   fileRoutesByTo: FileRoutesByTo
@@ -117,9 +137,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/chemistry/$chapter'
+    | '/computer-science/$chapter'
     | '/mathematics/$chapter'
     | '/physics/$chapter'
     | '/chemistry'
+    | '/computer-science'
     | '/mathematics'
     | '/physics'
   id:
@@ -128,9 +150,11 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/chemistry/$chapter'
+    | '/computer-science/$chapter'
     | '/mathematics/$chapter'
     | '/physics/$chapter'
     | '/chemistry/'
+    | '/computer-science/'
     | '/mathematics/'
     | '/physics/'
   fileRoutesById: FileRoutesById
@@ -140,9 +164,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ChemistryChapterRoute: typeof ChemistryChapterRoute
+  ComputerScienceChapterRoute: typeof ComputerScienceChapterRoute
   MathematicsChapterRoute: typeof MathematicsChapterRoute
   PhysicsChapterRoute: typeof PhysicsChapterRoute
   ChemistryIndexRoute: typeof ChemistryIndexRoute
+  ComputerScienceIndexRoute: typeof ComputerScienceIndexRoute
   MathematicsIndexRoute: typeof MathematicsIndexRoute
   PhysicsIndexRoute: typeof PhysicsIndexRoute
 }
@@ -184,6 +210,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChemistryChapterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/computer-science/': {
+      id: '/computer-science/'
+      path: '/computer-science'
+      fullPath: '/computer-science/'
+      preLoaderRoute: typeof ComputerScienceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/computer-science/$chapter': {
+      id: '/computer-science/$chapter'
+      path: '/computer-science/$chapter'
+      fullPath: '/computer-science/$chapter'
+      preLoaderRoute: typeof ComputerScienceChapterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mathematics/': {
       id: '/mathematics/'
       path: '/mathematics'
@@ -220,9 +260,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ChemistryChapterRoute: ChemistryChapterRoute,
+  ComputerScienceChapterRoute: ComputerScienceChapterRoute,
   MathematicsChapterRoute: MathematicsChapterRoute,
   PhysicsChapterRoute: PhysicsChapterRoute,
   ChemistryIndexRoute: ChemistryIndexRoute,
+  ComputerScienceIndexRoute: ComputerScienceIndexRoute,
   MathematicsIndexRoute: MathematicsIndexRoute,
   PhysicsIndexRoute: PhysicsIndexRoute,
 }

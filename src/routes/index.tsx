@@ -72,7 +72,7 @@ function Home() {
             className="mt-8"
           >
             <Link
-              to="/physics"
+              to="/computer-science"
               className="btn-neon inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03]"
             >
               Start Learning <ArrowRight className="h-4 w-4" />

@@ -1,12 +1,13 @@
 import { physics } from "./physics";
 import { chemistry } from "./chemistry";
 import { mathematics } from "./mathematics";
+import { computerScience } from "./computerscience";
 import type { Chapter, Subject } from "./types";
 
 export * from "./types";
-export { physics, chemistry, mathematics };
+export { physics, chemistry, mathematics, computerScience };
 
-export const subjects: Subject[] = [physics, chemistry, mathematics];
+export const subjects: Subject[] = [physics, chemistry, mathematics, computerScience];
 
 export function getSubject(slug: string): Subject | undefined {
   return subjects.find((s) => s.slug === slug);

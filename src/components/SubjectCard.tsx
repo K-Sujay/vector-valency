@@ -4,7 +4,12 @@ import { ArrowRight, Atom, FlaskConical, Sigma } from "lucide-react";
 import type { Subject } from "@/data";
 import { subjectPath } from "@/lib/routes";
 
-const icons = { physics: Atom, chemistry: FlaskConical, mathematics: Sigma } as const;
+const icons = {
+  physics: Atom,
+  chemistry: FlaskConical,
+  mathematics: Sigma,
+  "computer-science": Atom,
+} as const;
 
 export function SubjectCard({ subject, index }: { subject: Subject; index: number }) {
   const Icon = icons[subject.slug];

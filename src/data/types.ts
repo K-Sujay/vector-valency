@@ -16,7 +16,7 @@ export interface Chapter {
 }
 
 export interface Subject {
-  slug: "physics" | "chemistry" | "mathematics";
+  slug: "physics" | "chemistry" | "mathematics" | "computer-science";
   name: string;
   icon: string;
   blurb: string;

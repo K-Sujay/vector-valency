@@ -30,6 +30,11 @@ export function Footer() {
                 Mathematics
               </Link>
             </li>
+            <li>
+              <Link to="/computer-science" className="hover:text-primary">
+                Computer Science
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
