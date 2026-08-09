@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact channels for Vector & Valency are coming soon — email, Instagram and GitHub.",
+          "Contact channels for Vector & Valency are — email, Instagram and GitHub.",
       },
       { property: "og:title", content: "Contact — Vector & Valency" },
       { property: "og:description", content: "Our contact channels are coming soon." },
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const channels = [
-  { icon: Mail, label: "Email", value: "Coming Soon" },
-  { icon: Instagram, label: "Instagram", value: "Coming Soon" },
-  { icon: Github, label: "GitHub", value: "Coming Soon" },
+  { icon: Mail, label: "Email", value: "sujaysep2009@gmail.com" },
+  { icon: Instagram, label: "Instagram", value: "Not yet" },
+  { icon: Github, label: "GitHub", value: "K-Sujay" },
 ];
 
 function Contact() {
