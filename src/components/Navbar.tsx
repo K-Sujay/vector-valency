@@ -6,12 +6,8 @@ import { Logo } from "./Logo";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/physics", label: "Physics" },
-  { to: "/chemistry", label: "Chemistry" },
-  { to: "/mathematics", label: "Mathematics" },
-  { to: "/computer-science", label: "Computer Science" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact" },
+  { to: "/subjects", label: "Subjects" },
+  { to: "/about", label: "About" },
 ] as const;
 
 export function Navbar() {
@@ -40,7 +36,9 @@ export function Navbar() {
               </li>
             ))}
           </ul>
+
           <ThemeToggle />
+
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
