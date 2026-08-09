@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="vvGrad" x1="20" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <line x1="60" y1="92" x2="26" y2="26" stroke="url(#vvGrad)" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="9" fill="none" stroke="url(#vvGrad)" stroke-width="4"/>
+  <circle cx="24" cy="24" r="3.5" fill="url(#vvGrad)"/>
+  <line x1="60" y1="92" x2="83.5" y2="38.6" stroke="url(#vvGrad)" stroke-width="9" stroke-linecap="round"/>
+  <g transform="translate(90,24) rotate(-66.19)">
+    <path d="M 0,0 L -18,-7 L -12,0 L -18,7 Z" fill="url(#vvGrad)"/>
+  </g>
+  <circle cx="60" cy="92" r="4.5" fill="url(#vvGrad)"/>
+</svg>
