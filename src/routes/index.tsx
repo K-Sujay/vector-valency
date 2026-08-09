@@ -35,10 +35,11 @@ function Home() {
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            src="/logo-mark.png"
-            alt="Vector & Valency neon logo"
+            src="/logo-mark.svg"
+            alt="Vector & Valency logo"
             className="h-28 w-auto sm:h-40"
           />
+
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,6 +48,7 @@ function Home() {
           >
             <span className="neon-text">Vector &amp; Valency</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +74,7 @@ function Home() {
             className="mt-8"
           >
             <Link
-              to="/computer-science"
+              to="/subjects"
               className="btn-neon inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.03]"
             >
               Start Learning <ArrowRight className="h-4 w-4" />
