@@ -10,7 +10,7 @@ export function Logo({
 
   return (
     <span className="flex min-w-0 items-center gap-2.5">
-      <img src="/logo-mark.png" alt="Vector & Valency logo" className={`${mark} w-auto shrink-0`} />
+      <img src="/logo-mark.svg" alt="Vector & Valency logo" className={`${mark} w-auto shrink-0`} />
       <span className="min-w-0">
         <span className={`block truncate font-display font-bold leading-tight ${text}`}>
           Vector &amp; Valency
