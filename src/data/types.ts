@@ -7,12 +7,18 @@ export interface Formula {
   tier: FormulaTier;
 }
 
+export interface Definition {
+  term: string;
+  explanation: string;
+}
+
 export interface Chapter {
   slug: string;
   number: number;
   title: string;
+  definitions?: Definition[];
   formulas: Formula[];
-  /** Future-ready slots: definitions, notes, solutions, pyqs, pdfs */
+  /** Future-ready slots: notes, solutions, pyqs, pdfs */
 }
 
 export interface Subject {
