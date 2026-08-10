@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
-import { TIERS, type Chapter, type Subject } from "@/data";
+import { type Chapter, type Subject } from "@/data";
 import { subjectPath } from "@/lib/routes";
 import { FormulaCard } from "./FormulaCard";
 
@@ -24,22 +24,13 @@ export function ChapterPage({ subject, chapter }: { subject: Subject; chapter: C
           </p>
         </motion.header>
 
-        {TIERS.map(({ tier, label, icon }) => {
-          const items = chapter.formulas.filter((f) => f.tier === tier);
-          if (items.length === 0) return null;
-          return (
-            <section key={tier} className="mt-12">
-              <h2 className="text-lg font-semibold text-foreground">
-                <span aria-hidden>{icon}</span> {label}
-              </h2>
-              <div className="mt-5 grid gap-4">
-                {items.map((f, i) => (
-                  <FormulaCard key={f.name} formula={f} index={i} />
-                ))}
-              </div>
-            </section>
-          );
-        })}
+        <section className="mt-12">
+          <div className="grid gap-4">
+            {chapter.formulas.map((f, i) => (
+              <FormulaCard key={f.name} formula={f} index={i} />
+            ))}
+          </div>
+        </section>
 
         <section className="mt-14">
           <h2 className="text-lg font-semibold text-foreground">
