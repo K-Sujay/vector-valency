@@ -24,8 +24,27 @@ export function ChapterPage({ subject, chapter }: { subject: Subject; chapter: C
           </p>
         </motion.header>
 
+        {chapter.definitions && chapter.definitions.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-lg font-semibold text-foreground">
+              <span aria-hidden>📘</span> Key Definitions
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {chapter.definitions.map((d) => (
+                <div key={d.term} className="glass rounded-2xl p-5">
+                  <p className="font-semibold text-foreground">{d.term}</p>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{d.explanation}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className="mt-12">
-          <div className="grid gap-4">
+          <h2 className="text-lg font-semibold text-foreground">
+            <span aria-hidden>🧮</span> Formulas
+          </h2>
+          <div className="mt-5 grid gap-4">
             {chapter.formulas.map((f, i) => (
               <FormulaCard key={f.name} formula={f} index={i} />
             ))}
