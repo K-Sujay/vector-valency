@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Vector & Valency was created by K. Sujay to help CBSE Class 12 students access Physics, Chemistry and Maths formulas in one organized place.",
+          "Vector & Valency was created by K. Sujay to help CBSE Class 12 students access Physics, Chemistry, Maths and Computer Science formulas, definitions in one organized place and have fun time having quizes ",
       },
       { property: "og:title", content: "About Vector & Valency" },
       {
