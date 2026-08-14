@@ -1,0 +1,209 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Kept the "neon" names so nothing else in the codebase breaks —
+     values retuned from magenta/violet to the navy/cyan/sky family. */
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-violet: var(--neon-violet);
+  --color-neon-cyan: var(--neon-cyan);
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 1rem;
+
+  --background: oklch(0.97 0.008 264);
+  --foreground: oklch(0.19 0.045 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.045 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.045 265);
+
+  /* Primary = Cyan, per brand spec (Section 3: "Primary accent, active states") */
+  --primary: oklch(0.52 0.18 233);
+  --primary-foreground: oklch(0.99 0.005 280);
+
+  --secondary: oklch(0.94 0.015 262);
+  --secondary-foreground: oklch(0.24 0.05 265);
+  --muted: oklch(0.94 0.012 262);
+  --muted-foreground: oklch(0.5 0.03 262);
+
+  /* Accent = Sky Blue, per brand spec (Section 3: "Secondary accent, links, progress") */
+  --accent: oklch(0.6 0.15 215);
+  --accent-foreground: oklch(0.99 0.005 280);
+
+  --destructive: oklch(0.711 0.166 22.2);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.015 262);
+  --input: oklch(0.9 0.015 262);
+  --ring: oklch(0.52 0.18 233);
+
+  --neon-magenta: oklch(0.75 0.14 233);
+  --neon-violet: oklch(0.62 0.15 250);
+  --neon-cyan: oklch(0.8 0.13 212);
+
+  --glass-bg: oklch(1 0 0 / 65%);
+  --glass-border: oklch(0.2 0.05 265 / 10%);
+
+  --gradient-neon: linear-gradient(
+    100deg,
+    var(--neon-magenta),
+    var(--neon-violet) 48%,
+    var(--neon-cyan)
+  );
+  --gradient-hero: radial-gradient(
+    circle at 50% 120%,
+    oklch(0.62 0.15 250 / 14%),
+    transparent 60%
+  );
+
+  --shadow-glow: 0 18px 60px -18px oklch(0.62 0.15 250 / 35%);
+  --shadow-card: 0 12px 40px -22px oklch(0.2 0.05 265 / 45%);
+}
+
+.dark {
+  /* Deep Navy — the site's primary brand background */
+  --background: oklch(0.183 0.031 263.4);
+  --foreground: oklch(0.984 0.003 247.9);
+
+  /* Card Navy */
+  --card: oklch(0.226 0.039 259.9);
+  --card-foreground: oklch(0.984 0.003 247.9);
+  --popover: oklch(0.21 0.039 259.9);
+  --popover-foreground: oklch(0.984 0.003 247.9);
+
+  /* Cyan primary */
+  --primary: oklch(0.797 0.134 211.5);
+  --primary-foreground: oklch(0.183 0.031 263.4);
+
+  --secondary: oklch(0.3 0.045 259);
+  --secondary-foreground: oklch(0.96 0.012 280);
+  --muted: oklch(0.26 0.04 261);
+  --muted-foreground: oklch(0.711 0.035 256.8);
+
+  /* Sky Blue accent */
+  --accent: oklch(0.754 0.139 232.7);
+  --accent-foreground: oklch(0.183 0.031 263.4);
+
+  --destructive: oklch(0.711 0.166 22.2);
+  --destructive-foreground: oklch(0.984 0.003 247.9);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.797 0.134 211.5);
+
+  --neon-magenta: oklch(0.75 0.14 233);
+  --neon-violet: oklch(0.62 0.15 250);
+  --neon-cyan: oklch(0.8 0.13 212);
+
+  --glass-bg: oklch(0.24 0.04 260 / 55%);
+  --glass-border: oklch(1 0 0 / 12%);
+
+  --gradient-hero: radial-gradient(
+    circle at 50% 115%,
+    oklch(0.62 0.15 250 / 20%),
+    transparent 62%
+  );
+
+  --shadow-glow: 0 22px 70px -18px oklch(0.62 0.15 250 / 45%);
+  --shadow-card: 0 16px 50px -26px oklch(0 0 0 / 70%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: var(--shadow-card);
+}
+
+@utility neon-text {
+  background: var(--gradient-neon);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility neon-ring {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-neon);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}
+
+@utility aurora {
+  background-image: var(--gradient-hero);
+}
+
+@utility btn-neon {
+  background: var(--gradient-neon);
+  color: oklch(0.183 0.031 263.4);
+  font-weight: 600;
+}
